@@ -16,11 +16,7 @@ int main() {
         printf("Regular files in directory with access permissions for the current user:\n");
         while(directoryEntry = readdir(directory)) {
             lstat(directoryEntry->d_name, &state);
-            if(S_ISREG(state.st_mode) &&
-                    (state.st_mode & S_IRUSR) &&
-                    (state.st_mode & S_IWUSR) &&
-                    (state.st_mode & S_IXUSR)
-                    ){
+            if(S_ISREG(state.st_mode) && (state.st_mode & S_IWUSR)){
                 printf("%s\n", directoryEntry->d_name);
             }
         }

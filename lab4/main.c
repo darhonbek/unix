@@ -30,8 +30,10 @@ int main() {
         const long int id = 29;
 
         // 1
-        double ans = 0;
-        ans = (1 + id);
+        double ans = 0, alpha = 0;
+        printf("Enter value of Alpha: ");
+        scanf("%lf", &alpha);
+        ans = pow((1 + id), alpha);
         fprintf(fp, "1: %lf\n", ans);
 
         // 2
